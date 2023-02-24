@@ -1,0 +1,84 @@
+/* * {
+    box-sizing: border-box;
+  } */
+
+/* .NewPatientForm form{
+    width: 40%;
+    display: block;
+    column-gap: 30px;
+    text-align: left;
+    font-weight: bold;
+    padding-bottom: 50px;
+    padding-top: 50px;
+    padding-right: 90px;
+    padding-left: 90px;
+    background-color: #ffffff;
+    border-radius: 25px;
+  }
+  
+  .NewPatientForm input {
+    height: 30px;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #ffffff;
+  }
+  
+  /* .NewPatientForm textarea {
+    height: 200px;
+  }
+   */
+  /* .NewProjectForm input, textarea {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+  } */
+  
+  /* textarea {
+    padding: 15px;
+  } */
+  
+  /* .descrLabel {
+    display: block;
+    grid-column: 1 / span 2;
+  } */
+  
+  /* .divButton {
+    grid-column: 1 / span 2;
+    text-align: center;
+    background-color: #ffffff;
+  } */
+  
+  /* .NewPatientForm ::placeholder {
+    color:#da322f;
+  } */
+  
+  /* .NewPatientForm label {
+    display: block;
+    margin-bottom: .5em;
+    background-color: #ffffff;
+  }
+    .formbutton {
+      width: 70%;
+      font-size: 1.5ch;
+      font-weight: bold;
+      background-color: #020202;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .formbutton:hover {
+        background-color: #2d2e2d;
+      }
+      
+    .buttondiv {
+        grid-column: 1 / span 2;
+        text-align: center;
+        background-color: #ffffff;
+    }  */
+    
