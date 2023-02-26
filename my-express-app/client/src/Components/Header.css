@@ -1,0 +1,23 @@
+headerCard {
+    background: none;
+    box-shadow: none;
+    /* width: 800px; */
+    /* text-align: center; */
+}
+
+.headerDiv {
+  text-align: left;
+}
+
+h1 {
+    font-weight: 900;
+    font-size: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin: 0 auto;
+  }
+  
+  h2 {
+    color: white;
+    font-size: 30px;
+  }

@@ -6,7 +6,6 @@ import './PatientFile.css';
 import AddProgramForm from "./AddProgramForm";
 import PatientData from "./PatientData";
 import ShowPrograms from "./ShowPrograms";
-import ExercisesView from "./ExercisesView";
 
 function PatientFile({patients}) {
   const [programs, setPrograms] = useState([]);

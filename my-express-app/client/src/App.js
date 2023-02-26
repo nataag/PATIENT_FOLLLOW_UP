@@ -5,6 +5,8 @@ import { useState } from "react";
 import PatientFile from "./Components/PatientFile";
 import HomeView from "./Components/HomeView";
 import ExercisesView from "./Components/ExercisesView";
+import Header from "./Components/Header";
+import UrlToShare from "./Components/UrlToShare";
 // import Logo from "./LOGO.png";
 
 function App() {
@@ -36,22 +38,15 @@ async function getPatients() {
 
 
   return (
-    <div className="bg-primary">
+    <div className="bg-info">
       
-      {/* <div className="logo">
-      
-      </div> */}
-
-      <nav>
-      <Link to="/patients">PatientFile</Link>
-      </nav>
-      
-      <h1>#properRecovery</h1>
-      <h2>Create Homework for Patients Instantly</h2>
+      <Header />
       <Routes className="center">
         <Route path="/" element= {<HomeView patients={patients}/>}  />
         <Route path="/patients/:patientId" element={<PatientFile patients={patients}/>} />
-        <Route path="/programs/:programId" element={<ExercisesView />}  />
+        {/* <Route path="/programs/:patientId" element={<ShowPrograms />}  /> */}
+        <Route path="/programs/program/:programId" element={<ExercisesView />}  />
+        <Route path="/exercises/:programId" element={<UrlToShare />} />
       </Routes>
       
     </div>

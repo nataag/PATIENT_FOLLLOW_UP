@@ -32,69 +32,65 @@ function AddExerciseForm(props) {
 
   
 return (
-  <div className="container-sm row d-flex justify-content-center">
-  <form onSubmit={handleSubmit} className= "col-6 bg-light">
-    
-    <label className="col-6">
-        Exercise Name
-        <input
-            type="text"
-            className="form-control form-control-sm"
-            name="exerciseName"
-            value={newExercise.exerciseName}
-            onChange={handleChange}
-        />
-    </label>
-    <label className="col-6">
-        Video
-        <input
-            className="form-control form-control-sm"
-            type="text"
-            name="video"
-            value={newExercise.video}
-            onChange={handleChange}
-        />
-    </label>  
-    <label className="row">
-        Series
-        <input
-            className="form-control form-control-sm"
-            type="number"
-            name="series"
+    <div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+    <div class="col-xl-7 col-lg-8 col-md-9 col-11">
+
+  <div className="card">
+
+    <form className="form-card" onSubmit={handleSubmit}>
+        <div className="row justify-content-between text-left">
+            <div className="form-group col-sm-6 flex-column d-flex"> 
+                  <label className="form-control-label px-1">Name the exercise<span className="text-danger"> *</span></label>
+                  <input type="text" id="fname" name="exerciseName"
+                  placeholder="Enter your first name"
+                  value={newExercise.exerciseName}
+                  onChange={handleChange}/> 
+            </div>
+
+            <div className="form-group col-sm-6 flex-column d-flex"> 
+            <label className="form-control-label px-1">Video Url</label>
+            <input type="url" id="lname" name="video" placeholder="Enter your last name"
+             value={newExercise.video}
+             onChange={handleChange}/>
+            </div>
+        </div>
+
+        <div className="row justify-content-between text-left">
+            <div className="form-group col-sm-6 flex-column d-flex"> 
+            <label className="form-control-label px-1">Series<span className="text-danger"> *</span></label>
+            <input type="number" id="email" name="series"
             value={newExercise.series}
-            onChange={handleChange}
-        />
-    </label>  
-    <label className="row">
-        Repetitions
-        <input
-            className="form-control form-control-sm"
-            type="number"
-            name="repetitions"
-            value={newExercise.repetitions}
-            onChange={handleChange}
-        />
-    </label>
-    <label className="row">
-        Notes
-        <textarea
-            className="form-control form-control-sm"
-            type="text"
-            id="textarea"
-            name="notes"
-            placeholder="Add more instructions here..."
-            value={newExercise.notes}
-            onChange={handleChange}
-        />
-    </label>   
-    
-    <div>
-       <button 
-        className="btn btn-primary"
-        type="submit">ADD EXERCISE</button>
+            onChange={handleChange}/>
+            </div>
+            
+            <div className="form-group col-sm-6 flex-column d-flex">
+                <label className="form-control-label px-1">Repetitions<span className="text-danger"> *</span></label>
+                <input type="number" id="mob" name="repetitions"
+                value={newExercise.repetitions}
+                onChange={handleChange}/>
+            </div>
+        </div>
+        
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1">Notes</label>
+                <textarea type="text" id="ans" name="notes" 
+                placeholder="Add more instructions here..."
+                value={newExercise.notes}
+                onChange={handleChange}/>     
+            </div>
+        </div>
+        <div className="row justify-content-center text-center mb-4">
+            <div className="form-group " id="formbutton"> 
+            <button type="submit" className="btn-block btn-primary col-sm-6">Add a New Exercise</button> 
+            </div>
+        </div>
+    </form>
     </div>
-  </form>
-  </div>
+    </div>
+    </div>
+    </div>
 );
 
 } 

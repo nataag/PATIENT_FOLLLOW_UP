@@ -22,6 +22,26 @@ router.get("/:programId", async function(req, res, next) {
   }
 });
 
+// GET exercise by id
+router.get("/ex/:id", async function(req, res, next) {
+  let index = req.params.id
+ //  let programId = req.params.programId;
+ 
+   try {
+     let results = await db(`SELECT * FROM exercises WHERE id = ${index}`);
+     let exercises = results.data;
+     // if (programs.length === 0) {
+     
+     //   res.status(404).send({ error: "Programs not found" });
+     // } else {
+     //   res.send(programs);
+     // }
+     res.send(exercises);
+   } catch (err) {
+     res.status(500).send({ error: err.message });
+   }
+ });
+
 // // GET each program
 // router.get("/:patientId/:programId", async function(req, res, next) {
 //   let patientId = req.params.patientId
@@ -105,45 +125,49 @@ router.get("/:programId", async function(req, res, next) {
     }
   });
   
-  //delete a program
-  router.delete("/:id", async (req, res, next) => {
+  //delete an exercise
+  router.delete("/ex/:id", async (req, res, next) => {
     let index = req.params.id;
   
     try {
-        let result = await db(`SELECT * FROM programs WHERE id = ${index}`);
+        let result = await db(`SELECT * FROM exercises WHERE id = ${index}`);
         if (result.data.length === 0) {
-            res.status(404).send({ error: 'Program not found' });
+            res.status(404).send({ error: 'Exercise not found' });
         } else {
-            await db(`DELETE FROM programs WHERE id = ${index}`);
-            let result = await db('SELECT * FROM programs');
-            let programs = result.data;
-            res.send(programs);
+            await db(`DELETE FROM exercises WHERE id = ${index}`);
+            let result = await db('SELECT * FROM exercises');
+            let exercises = result.data;
+            res.send(exercises);
         } 
     } catch (err) {
         res.status(500).send({ error: err.message });
     }
   });
   
-  //modify a program
-  router.put("/:id", async (req, res, next) => {
+  //modify an exercise
+  router.put("/ex/:id", async (req, res, next) => {
     let index = req.params.id;
-    let { programTitle } = req.body;
+    let { exerciseName, video, series, repetitions, notes } = req.body;
   
     try {
-        let result = await db(`SELECT * FROM programs WHERE id = ${index}`);
+        let result = await db(`SELECT * FROM exercises WHERE id = ${index}`);
         if (result.data.length === 0) {
-            res.status(404).send({ error: 'Program not found' });
+            res.status(404).send({ error: 'Exercise not found' });
         } else {
             let sql = `
-                UPDATE programs 
-                SET programTitle = '${programTitle}'
+                UPDATE exercises
+                SET exerciseName = '${exerciseName}',
+                video = '${video}',
+                series = ${series},
+                repetitions = ${repetitions},
+                notes = '${notes}'
                 WHERE id = ${index}
             `;
   
             await db(sql);
-            let result = await db('SELECT * FROM programs');
-            let programs = result.data;
-            res.send(programs);
+            let result = await db('SELECT * FROM exercises');
+            let exercises = result.data;
+            res.send(exercises);
         }
     } catch (err) {
         res.status(500).send({ error: err.message });

@@ -11,17 +11,17 @@ const EMPTY_FORM = {
     email: ''
 };
 
-function NewPatientForm(props) {
+function NewPatientForm({patients, addPatient}) {
     const [formData, setFormData] = useState(EMPTY_FORM);
     const navigate = useNavigate();
 
 
     function handleSubmit(event) {
         event.preventDefault();
-        props.addPatientCb(formData);
+        addPatient(formData);
         console.log(formData);
         setFormData(EMPTY_FORM);
-        navigate(`/patients/${props.patients[props.patients.length-1].id}`);
+        navigate(`/patients/${patients[patients.length-1].id}`);
     }
 
     function handleChange(event) {
@@ -34,59 +34,62 @@ function NewPatientForm(props) {
 
  
     return (
-      <div className="container-sm row d-flex justify-content-center">
-      <form onSubmit={handleSubmit} className="col-6 bg-light m-5">
-        <label className="row">
-            First Name
-            <input
-                className="form-control form-control-sm"
-                type="text"
-                name="firstName"
+        <div class="container-fluid mx-auto">
+    <div class="row d-flex justify-content-center">
+    <div class="col-xl-5 col-lg-8 col-md-9 col-11">
+
+  <div className="card">
+
+    <form className="form-card" onSubmit={handleSubmit}>
+                
+        <div class="row justify-content-between text-left">
+            <h2>Create a New Patient File</h2>
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1">First Name</label>
+                <input type="text" id="ans" name="firstName" 
                 value={formData.firstName}
-                onChange={handleChange}
-            />
-        </label>
-
-        <label className="row">
-            Last Name
-            <input
-                className="form-control form-control-sm"
-                type="text"
-                name="lastName"
-                value={formData.lastName}
-                onChange={handleChange}
-            />
-        </label>
-
-        <label className="row">
-            Birth Date
-            <input
-                className="form-control form-control-sm"
-                type="date"
-                name="birthDate"
-                value={formData.birthDate}
-                onChange={handleChange}
-            />
-        </label>
-
-        <label className="row">
-            Email
-            <input
-                className="form-control form-control-sm"
-                type="text"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-            />
-        </label>  
-        <div className="buttondiv">
-           <button 
-            className="btn btn-primary"
-            type="submit">ADD A PATIENT
-           </button>
+                onChange={handleChange}/>     
+            </div>
         </div>
-      </form>
-      </div>
+
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1">Last Name</label>
+                <input type="text" id="ans" name="lastName" 
+                value={formData.lastName}
+                onChange={handleChange}/>     
+            </div>
+        </div>
+
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1">Birth Date</label>
+                <input type="text" id="ans" name="birthDate" 
+                value={formData.birthDate}
+                onChange={handleChange}/>     
+            </div>
+        </div>
+
+        <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1">Email</label>
+                <input type="text" id="ans" name="email" 
+                value={formData.email}
+                onChange={handleChange}/>     
+            </div>
+        </div>
+
+        <div className="row justify-content-center text-center mb-4">
+            <div className="form-group " id="formbutton"> 
+            <button type="submit" className="btn-block btn-primary col-sm-6">ADD PATIENT</button> 
+            </div>
+        </div>
+    </form>
+    </div>
+    </div>
+    </div>
+    </div>
+
     );
 
 } 

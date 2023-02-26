@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 import NewPatientForm from "./NewPatientForm";
 import SearchPatient from "./SearchPatient";
 
-function HomeView(props) {
+function HomeView({patients, setPatients}) {
 
-    
-
-    //Add a new patient (POST)
+    //POST a new patient
 async function addPatient(patient) {
     // Define fetch() options
     let options = {
@@ -19,10 +17,10 @@ async function addPatient(patient) {
     };
     
     try {
-        let response = await fetch('/patients', options);
+        let response = await fetch('/patients/', options);
         if (response.ok) {
             let patients = await response.json();
-            props.setPatients(patients);
+            setPatients(patients);
         } else {
             console.log(`Server error: ${response.status} ${response.statusText}`);
         }
@@ -37,7 +35,7 @@ async function addPatient(patient) {
         
         <div className="HomeView">
             <SearchPatient />
-            <NewPatientForm addPatientCb={addPatient} patients={props.patients}/>
+            <NewPatientForm patients={patients} addPatient={addPatient}/>
         </div>
             
     );

@@ -1,30 +1,56 @@
 import React, { useState } from "react";
-import './SearchPatient.css';
-import { Link } from 'react-router-dom';
+import './ShareForm.css';
+import { Link, useParams } from 'react-router-dom';
 
-function SearchPatient() {
-    const [search, setSearch] = useState("");
-    const [patients, setPatients] = useState([])
+function ShareForm(props) {
+    const [data, setData] = useState("");
+    // const [patients, setPatients] = useState([])
 
 
-    function handleChange(event) {
-        setSearch(event.target.value)
-    }
+    // function handleChange(event) {
+    //     setSearch(event.target.value)
+    // }
 
-    async function searchPatient(e){
+    // async function searchPatient(e){
 
-        e.preventDefault()
-        const response = await fetch("/patients/search?search="+search)
-        const data = await response.json()
-        setPatients(data)
+    //     e.preventDefault()
+    //     const response = await fetch("/patients/search?search="+search)
+    //     const data = await response.json()
+    //     setPatients(data)
 
-    }
+    // }
 
- 
+    // function handleSubmit(event) {
+    //     event.preventDefault();
+    //     props.addProgramCb(newProgram);
+    //     setNewProgram(EMPTY_PROGRAM);
+    //   }
+    
+      function handleChange(event) {
+        let { name, value } = event.target;
+            setData(data => ({
+                ...data, 
+                [name]: value
+            }));
+        }
+
+   const {programId} = useParams();
     return (
         <div class="container-fluid mx-auto">
         <div class="row d-flex justify-content-center">
-        <div class="col-xl-5 col-lg-8 col-md-9 col-11">
+            
+        <div>
+          
+                <div>
+                    <Link classsName="searchItem" 
+                      to={`/exercises/${programId}`}>SEND
+                    </Link>
+                    
+                </div>
+                
+                </div>    
+
+        {/* <div class="col-xl-5 col-lg-8 col-md-9 col-11">
     
       <div className="card">
     
@@ -57,7 +83,7 @@ function SearchPatient() {
             </div>
         </form>
         </div>
-        </div>
+        </div> */}
         </div>
         </div>
     
@@ -68,4 +94,4 @@ function SearchPatient() {
 
 } 
 
-export default SearchPatient;
+export default ShareForm;

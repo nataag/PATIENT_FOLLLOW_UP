@@ -42,26 +42,26 @@ router.get("/:id", async function(req, res, next) {
 });
 
 // GET programs of one patient (if more than one)
-router.get("/:patientId/programs", async function(req, res, next) {
-  let index = req.params.patientId;
+// router.get("/:patientId/programs", async function(req, res, next) {
+//   let index = req.params.patientId;
 
-  try {
-    let results = await db(`SELECT *  
-    FROM programs
-    WHERE patientId = ${index}`);
+//   try {
+//     let results = await db(`SELECT *  
+//     FROM programs
+//     WHERE patientId = ${index}`);
     
-    let programs = results.data;
-    // if (programs.length === 0) {
-    //   //students array is empty so no students found
-    //   res.status(404).send({ error: "Program not found" });
-    // } else {
-    //   res.send(programs);
-    // }
-    res.send(programs)
-  } catch (err) {
-    res.status(500).send({ error: err.message });
-  }
-});
+//     let programs = results.data;
+//     if (programs.length === 0) {
+//       //students array is empty so no students found
+//       res.status(404).send({ error: "Program not found" });
+//     } else {
+//       res.send(programs);
+//     }
+//     res.send(programs)
+//   } catch (err) {
+//     res.status(500).send({ error: err.message });
+//   }
+// });
 
 //post a new patient
 router.post("/", async (req, res, next) => {
