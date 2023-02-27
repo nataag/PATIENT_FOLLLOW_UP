@@ -34,19 +34,16 @@ function NewPatientForm({patients, addPatient}) {
 
  
     return (
-        <div class="container-fluid mx-auto">
-    <div class="row d-flex justify-content-center">
-    <div class="col-xl-5 col-lg-8 col-md-9 col-11">
 
   <div className="card">
 
-    <form className="form-card" onSubmit={handleSubmit}>
+    <form className="form-card mt-3" onSubmit={handleSubmit}>
                 
         <div class="row justify-content-between text-left">
-            <h2>Create a New Patient File</h2>
+            <h5 className ="mb-2">Create a New Patient File</h5>
             <div class="form-group col-12 flex-column d-flex">
-                <label className="form-control-label px-1">First Name</label>
-                <input type="text" id="ans" name="firstName" 
+                <label className="form-control-label px-1"></label>
+                <input type="text" id="ans" name="firstName" placeholder="First Name"
                 value={formData.firstName}
                 onChange={handleChange}/>     
             </div>
@@ -54,8 +51,8 @@ function NewPatientForm({patients, addPatient}) {
 
         <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
-                <label className="form-control-label px-1">Last Name</label>
-                <input type="text" id="ans" name="lastName" 
+                <label className="form-control-label px-1"></label>
+                <input type="text" id="ans" name="lastName" placeholder="Last Name"
                 value={formData.lastName}
                 onChange={handleChange}/>     
             </div>
@@ -63,8 +60,8 @@ function NewPatientForm({patients, addPatient}) {
 
         <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
-                <label className="form-control-label px-1">Birth Date</label>
-                <input type="text" id="ans" name="birthDate" 
+                <label className="form-control-label px-1"></label>
+                <input type="text" id="ans" name="birthDate" placeholder="Birth Date YYYY-MM-DD"
                 value={formData.birthDate}
                 onChange={handleChange}/>     
             </div>
@@ -72,8 +69,8 @@ function NewPatientForm({patients, addPatient}) {
 
         <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
-                <label className="form-control-label px-1">Email</label>
-                <input type="text" id="ans" name="email" 
+                <label className="form-control-label px-1"></label>
+                <input type="text" id="ans" name="email" placeholder="Email Address"
                 value={formData.email}
                 onChange={handleChange}/>     
             </div>
@@ -81,14 +78,12 @@ function NewPatientForm({patients, addPatient}) {
 
         <div className="row justify-content-center text-center mb-4">
             <div className="form-group " id="formbutton"> 
-            <button type="submit" className="btn-block btn-primary col-sm-6">ADD PATIENT</button> 
+            <button type="submit" id="buttonForm" className="btn-block btn-primary col-sm-6">ADD PATIENT</button> 
             </div>
         </div>
     </form>
     </div>
-    </div>
-    </div>
-    </div>
+  
 
     );
 

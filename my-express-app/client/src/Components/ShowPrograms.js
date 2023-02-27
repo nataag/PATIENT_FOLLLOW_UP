@@ -12,29 +12,27 @@ function ShowPrograms(props) {
   return (
     <div className="ShowPrograms">
      
-           <h3> Programs:
+           
             
            {/* <div><Link 
                   to={`/exercises/${program.id}`}>{program.programTitle}
           </Link> */}
 
-
+          <div className="card">
+          <h4>Programs</h4>
           {
                 props.programs.map(p => (
-                    <tr key={p.patientId}>
-                        <td>
-                        <Link 
+                    <div key={p.id}>
+                        <div>
+                        <Link className="text-info h5 text-decoration-none"
                   to={`/programs/program/${p.id}`}>{p.programTitle}
-          </Link>
-                        </td>
-                    </tr>
+                        </Link>
+                        <button onClick={(e) => props.deleteProgramCb(p.id)} title="delete" type="button"> DELETE </button>
+                        </div>
+                    </div>
                 ))
-            }
-
-
-      
-           </h3>
-    
+                }
+    </div>
     </div>
 
     

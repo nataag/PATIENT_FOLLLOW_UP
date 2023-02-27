@@ -23,22 +23,23 @@ router.get("/:patientId", async function(req, res, next) {
 });
 
 //GET each program
-router.get("/program/:programId", async function(req, res, next) {
-  let programId = req.params.programId;
+router.get("/program/:id", async function(req, res, next) {
+  let id = req.params.id;
  
    try {
      let results = await db(`SELECT * 
      FROM programs
-     WHERE id = ${programId}
+     LEFT JOIN patients ON programs.patientId = patients.id
+     WHERE programs.id = ${id}
     `);
 
      let programs = results.data;
-     if (programs.length === 0) {
+    //  if (programs.length === 0) {
      
-       res.status(404).send({ error: "Programs not found" });
-     } else {
-       res.send(programs);
-     }
+    //    res.status(404).send({ error: "Programs not found" });
+    //  } else {
+    //    res.send(programs);
+    //  }
      res.send(programs);
    } catch (err) {
      res.status(500).send({ error: err.message });
@@ -96,7 +97,7 @@ router.get("/program/:programId", async function(req, res, next) {
   
     try {
         await db(sql);
-        let result = await db('SELECT * FROM programs');
+        let result = await db(`SELECT * FROM programs WHERE patientId = ${patientId}`);
         let programs = result.data;
         res.status(201).send(programs);
     } catch (err) {
@@ -105,7 +106,7 @@ router.get("/program/:programId", async function(req, res, next) {
   });
   
   //delete a program
-  router.delete("/program/:programId", async (req, res, next) => {
+  router.delete("/:programId/:id", async (req, res, next) => {
     let programId = req.params.programId;
   
     try {

@@ -28,34 +28,37 @@ function AddProgramForm(props) {
 
   
 return (
-  <div className="AddProgramForm">
-  <form onSubmit={handleSubmit}>
+  <div className="card">
     
-    <label>
-        Program Title
-        <input
-            type="text"
-            name="programTitle"
-            value={newProgram.programTitle}
-            onChange={handleChange}
-        />
-    </label>  
-    <label>
-            Today's Date
-            <input
-                type="date"
-                name="creationDate"
+    <form onSubmit={handleSubmit} className="form-card mt-3">
+                
+         <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <h5 className="mb-2">Add a New Program</h5>
+                <label className="form-control-label px-1"></label>
+                <input type="text" id="ans" name="programTitle" placeholder="Program Title"
+                value={newProgram.programTitle}
+                onChange={handleChange}
+            />  
+          </div>
+          </div>
+          <div class="row justify-content-between text-left">
+            <div class="form-group col-12 flex-column d-flex">
+                <label className="form-control-label px-1"></label>
+                <input type="date" id="ans" name="creationDate" placeholder="Toda's Date"
                 value={newProgram.creationDate}
                 onChange={handleChange}
-            />
-        </label>
-    <div className="buttondiv">
-       <button 
-        className="formbutton"
-        type="submit">ADD A PROGRAM</button>
+            />  
+          </div>
+          </div>
+
+        <div className="row justify-content-center text-center mb-4">
+            <div className="form-group " id="formbutton"> 
+            <button type="submit" className="btn-block btn-primary col-sm-6">ADD PROGRAM</button> 
+            </div>
+        </div>
+    </form>
     </div>
-  </form>
-  </div>
 );
 
 } 

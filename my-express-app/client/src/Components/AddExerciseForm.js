@@ -36,7 +36,7 @@ return (
     <div class="row d-flex justify-content-center">
     <div class="col-xl-7 col-lg-8 col-md-9 col-11">
 
-  <div className="card">
+  <div className="card bg-info">
 
     <form className="form-card" onSubmit={handleSubmit}>
         <div className="row justify-content-between text-left">
@@ -82,8 +82,8 @@ return (
             </div>
         </div>
         <div className="row justify-content-center text-center mb-4">
-            <div className="form-group " id="formbutton"> 
-            <button type="submit" className="btn-block btn-primary col-sm-6">Add a New Exercise</button> 
+            <div className="form-group"> 
+            <button type="submit" id="formbuttonex" className="btn-block col-sm-6">Add a New Exercise</button> 
             </div>
         </div>
     </form>

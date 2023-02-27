@@ -3,6 +3,7 @@ import './HomeView.css';
 import { Link } from 'react-router-dom';
 import NewPatientForm from "./NewPatientForm";
 import SearchPatient from "./SearchPatient";
+import Header from "./Header";
 
 function HomeView({patients, setPatients}) {
 
@@ -29,11 +30,10 @@ async function addPatient(patient) {
     }
 }
 
-
-
     return (
         
         <div className="HomeView">
+            <Header />
             <SearchPatient />
             <NewPatientForm patients={patients} addPatient={addPatient}/>
         </div>

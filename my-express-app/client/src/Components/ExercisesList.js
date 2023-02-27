@@ -30,11 +30,11 @@ function ExercisesList(props) {
      {/* <h3>Program: {programs.map(program => program.programTitle)}</h3> */}
      {
                 props.exercises.map(ex => (
-                    <div key={ex.id}>
+                    <div className="card bg-primary" key={ex.id}>
                         <div>
                             <button onClick={(e) => props.deleteEx(ex.id)} title="delete" type="button">x</button>
                             {' '}
-                            Exercise: {ex.exerciseName}
+                            {ex.exerciseName}
                         </div>
                         <div>
                             Video: <Link to={ex.video}>{ex.video}</Link>

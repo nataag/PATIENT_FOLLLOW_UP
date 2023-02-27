@@ -55,7 +55,6 @@ function ExercisesView(props) {
     
   // PUT: Modify exercise inputs
   async function modifyEx(id) {
-    // Find exercise in state and increase age
     let exercise = exercises.find(e => e.id === id);
 
     let options = {
@@ -78,7 +77,7 @@ function ExercisesView(props) {
 }
 
 // DELETE an exercise
-async function deleteEx(id) {
+async function deleteEx( id) {
   // Define fetch() options
   let options = {
       method: 'DELETE'
@@ -98,8 +97,11 @@ async function deleteEx(id) {
 }
 
     return (
-         
-        <div className="ExercisesView">
+      <div class="bg-white">
+      <div class="container-fluid mx-auto col-xl-9 col-lg-7 col-md-6 col-12">
+      <div class="row d-flex justify-content-center">
+
+        <div className="bg-white">
           {/* <h3>Programs: {key={programs.id} {programs.programTitle}}</h3> */}
           {/* <Routes>
           <Route path="/exercises/:programId" element={<ExercisesList exercises={exercises} deleteEx={deleteEx} modifyE x={modifyEx}/>}  />
@@ -107,9 +109,12 @@ async function deleteEx(id) {
           </Routes>  */}
           
           <ExercisesList exercises={exercises} deleteEx={deleteEx} modifyEx={modifyEx} />
+        </div>
+      </div>
+      </div>
           <AddExerciseForm addExerciseCb={addExercise} />
           <ShareForm exercises={exercises}/>
-        </div>
+      </div>
     );
 }
 

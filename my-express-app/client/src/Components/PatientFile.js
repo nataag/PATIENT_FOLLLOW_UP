@@ -52,13 +52,34 @@ async function addProgram (program) {
     console.log(`Server error: ${err.message}`);
   }
 }
+
+//Delete a program
+async function deleteProgram(id) {
+  // Define fetch() options
+  let options = {
+      method: 'DELETE'
+  };
+
+  try {
+      let response = await fetch(`/programs/${patientId}/${id}`, options);
+      if (response.ok) {
+          let programs = await response.json();
+          setPrograms(programs);
+      } else {
+          console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+  } catch (err) {
+      console.log(`Server error: ${err.message}`);
+  }
+}
+
  
   return (
     <div className="PatientFile">
      <PatientData patients={patients}/>
 
   
-        <ShowPrograms programs={programs} />
+        <ShowPrograms programs={programs} deleteProgramCb={deleteProgram}/>
         <AddProgramForm addProgramCb={addProgram} programs={programs}/>
     
         {/* <h3>Programs: {program?.programTitle}</h3> */}

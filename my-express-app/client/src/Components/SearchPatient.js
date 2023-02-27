@@ -22,18 +22,16 @@ function SearchPatient() {
 
  
     return (
-        <div class="container-fluid mx-auto">
-        <div class="row d-flex justify-content-center">
-        <div class="col-xl-5 col-lg-8 col-md-9 col-11">
     
       <div className="card">
     
-        <form className="form-card" onSubmit={searchPatient}>
+        <form className="form-card mt-3" onSubmit={searchPatient}>
                     
              <div class="row justify-content-between text-left">
                 <div class="form-group col-12 flex-column d-flex">
-                    <label className="form-control-label px-1">Find a Patient File</label>
-                    <input type="text" id="ans" name="search" 
+                    <h5 className="mb-2">Find a Patient File</h5>
+                    <label className="form-control-label px-1"></label>
+                    <input type="text" id="ans" name="search" placeholder="Search by Last Name"
                     value={search}
                     onChange={handleChange}
                 />
@@ -52,17 +50,12 @@ function SearchPatient() {
     
             <div className="row justify-content-center text-center mb-4">
                 <div className="form-group " id="formbutton"> 
-                <button type="submit" className="btn-block btn-primary col-sm-6">SEARCH A PATIENT</button> 
+                <button type="submit" className="btn-block btn-primary col-sm-6">SEARCH PATIENT</button> 
                 </div>
             </div>
         </form>
         </div>
-        </div>
-        </div>
-        </div>
-    
-    
-    
+          
 
     );
 
