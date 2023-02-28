@@ -35,11 +35,11 @@ function SearchPatient() {
                     value={search}
                     onChange={handleChange}
                 />
-                <div className="dropDown">{
+                <div className="dropDown text-decoration-none">{
                 patients.map(patient => 
                 <div>
-                    <Link classsName="searchItem" 
-                      to={`/patients/${patient.id}`}>{patient.firstName}
+                    <Link className="text-decoration-none text-dark active" 
+                      to={`/patients/${patient.id}`}>{`${patient.firstName} ${patient.lastName}`}
                     </Link>
                     
                 </div>)

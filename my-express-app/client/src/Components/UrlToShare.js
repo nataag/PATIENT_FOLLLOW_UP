@@ -1,5 +1,5 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Routes, Route, useParams, Link} from "react-router-dom";
 import "./UrlToShare.css";
 
 function UrlToShare(props) {
@@ -10,9 +10,9 @@ function UrlToShare(props) {
   // const patient = patients.find((patient) => +patient.id === +id);
 
   return (
-    <div>
-      {/* <h2>{patient?.firstName}'s page</h2> */}
-      <h2>Url To Share</h2>
+    <div className="container px-1 py-5 mx-auto">
+     <h1 className="pt-3">Program File </h1>
+           
     </div>
   );
 }

@@ -106,8 +106,9 @@ router.get("/program/:id", async function(req, res, next) {
   });
   
   //delete a program
-  router.delete("/:programId/:id", async (req, res, next) => {
-    let programId = req.params.programId;
+  router.delete("/:patientId/:id", async (req, res, next) => {
+    let programId = req.params.id;
+    let patientId = req.params.patientId;
   
     try {
         let result = await db(`SELECT * FROM programs WHERE id = ${programId}`);
@@ -115,7 +116,7 @@ router.get("/program/:id", async function(req, res, next) {
             res.status(404).send({ error: 'Program not found' });
         } else {
             await db(`DELETE FROM programs WHERE id = ${programId}`);
-            let result = await db('SELECT * FROM programs');
+            let result = await db(`SELECT * FROM programs WHERE patientId = ${patientId}`);
             let programs = result.data;
             res.send(programs);
         } 

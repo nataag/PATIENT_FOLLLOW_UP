@@ -19,15 +19,16 @@ function ShowPrograms(props) {
           </Link> */}
 
           <div className="card">
-          <h4>Programs</h4>
+          <h4>Program Files </h4>
           {
                 props.programs.map(p => (
                     <div key={p.id}>
                         <div>
-                        <Link className="text-info h5 text-decoration-none"
+                        <button id="deleteButton" onClick={(e) => props.deleteProgramCb(p.id)} title="delete" type="button"> DELETE </button>
+                        {`          `}<Link className="text-info h5 text-decoration-none"
                   to={`/programs/program/${p.id}`}>{p.programTitle}
                         </Link>
-                        <button onClick={(e) => props.deleteProgramCb(p.id)} title="delete" type="button"> DELETE </button>
+                        
                         </div>
                     </div>
                 ))

@@ -76,6 +76,10 @@ async function deleteProgram(id) {
  
   return (
     <div className="PatientFile">
+      <div className="container-fluid px-1 py-5 mx-auto" id="headerCard">
+    <div className="row d-flex justify-content-center">
+    <div className="col-xl-6 col-lg-8 col-md-9 col-11">
+    <div className="row justify-content-center text-left pt-3"></div>
      <PatientData patients={patients}/>
 
   
@@ -83,6 +87,9 @@ async function deleteProgram(id) {
         <AddProgramForm addProgramCb={addProgram} programs={programs}/>
     
         {/* <h3>Programs: {program?.programTitle}</h3> */}
+    </div>
+    </div>
+        </div>
     </div>
   );
 }

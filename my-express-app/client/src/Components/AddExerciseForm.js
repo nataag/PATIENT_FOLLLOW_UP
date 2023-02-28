@@ -32,7 +32,8 @@ function AddExerciseForm(props) {
 
   
 return (
-    <div class="container-fluid px-1 py-5 mx-auto">
+    
+    <div class="container-fluid mx-auto">
     <div class="row d-flex justify-content-center">
     <div class="col-xl-7 col-lg-8 col-md-9 col-11">
 
@@ -40,17 +41,17 @@ return (
 
     <form className="form-card" onSubmit={handleSubmit}>
         <div className="row justify-content-between text-left">
+            <h4>Add a New Exercise</h4>
             <div className="form-group col-sm-6 flex-column d-flex"> 
                   <label className="form-control-label px-1">Name the exercise<span className="text-danger"> *</span></label>
                   <input type="text" id="fname" name="exerciseName"
-                  placeholder="Enter your first name"
                   value={newExercise.exerciseName}
                   onChange={handleChange}/> 
             </div>
 
             <div className="form-group col-sm-6 flex-column d-flex"> 
             <label className="form-control-label px-1">Video Url</label>
-            <input type="url" id="lname" name="video" placeholder="Enter your last name"
+            <input type="url" id="lname" name="video"
              value={newExercise.video}
              onChange={handleChange}/>
             </div>
@@ -83,7 +84,7 @@ return (
         </div>
         <div className="row justify-content-center text-center mb-4">
             <div className="form-group"> 
-            <button type="submit" id="formbuttonex" className="btn-block col-sm-6">Add a New Exercise</button> 
+            <button type="submit" id="formbuttonex" className="btn-block col-sm-6">ADD EXERCISE</button> 
             </div>
         </div>
     </form>

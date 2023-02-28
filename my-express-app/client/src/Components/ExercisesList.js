@@ -2,6 +2,7 @@ import React, { useState } from "react";
 // import { useParams } from "react-router-dom";
 import { Routes, Route, Link } from "react-router-dom";
 import './ExercisesList.css';
+import UrlToShare from "./UrlToShare";
 
 function ExercisesList(props) {
   
@@ -25,42 +26,27 @@ function ExercisesList(props) {
        
 
   return (
-    <div className="PatientFile">
-     <h1>Exercises</h1>
-     {/* <h3>Program: {programs.map(program => program.programTitle)}</h3> */}
+    <div className="container px-1 py-5 mx-auto">
+     <h1 className="text-info pt-3">Program File </h1>
+     {/* <h3>Program: {props.programs.map(program => program.programTitle)}</h3> */}
      {
                 props.exercises.map(ex => (
-                    <div className="card bg-primary" key={ex.id}>
-                        <div>
-                            <button onClick={(e) => props.deleteEx(ex.id)} title="delete" type="button">x</button>
-                            {' '}
-                            {ex.exerciseName}
-                        </div>
-                        <div>
-                            Video: <Link to={ex.video}>{ex.video}</Link>
-                            {' '}
-                            
-                            <form >
-                                <label>
-                                    MODIFY THIS Exercise
-                                    <input
-                                    type="text"
-                                    name="exerciseName"
-                                    value={ex.exerciseName}
-                                    onChange={handleChange}
-                                    />
-                                </label>
-                                <button onClick={(e) => props.modifyEx(ex.id)} title="modify" type="button">MODIFY</button>
-                            </form>
+                    <div className="row card bg-light" key={ex.id}>
+                        
+                        <h5>{ex.exerciseName}</h5>
+                       
+                        <h6>Video: <Link to={ex.video}>{ex.video}</Link></h6>
+                        <h6>Series: {ex.series}</h6>
+                        <h6>Repetitions: {ex.repetitions} </h6>
+                        <h6>Notes: {ex.notes} </h6>
+                      
                             {/* <button onClick={(e) => props.modifyEx(ex.id)} title="modify" type="button">
                                 <input type="text">...</input>
                                 MODIFY
                             </button> */}
-                        </div>
-                        <div>
-                            Repetitions: {ex.repetitions}
-                            {' '}
-                            {/* <button onClick={(e) => props.addYearCb(d.id)} title="add year" type="button">+</button> */}
+
+                        <div id="divButton" className="col-6 content-right">
+                        <button className="col-6" onClick={(e) => props.deleteEx(ex.id)} title="delete" type="button">DELETE</button>
                         </div>
                     </div>
                 ))

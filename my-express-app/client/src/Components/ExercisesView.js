@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import AddExerciseForm from "./AddExerciseForm";
 import ExercisesList from "./ExercisesList";
 import ShareForm from "./ShareForm";
+// import UrlToShare from "./UrlToShare";
 
 function ExercisesView(props) {
 
@@ -84,7 +85,7 @@ async function deleteEx( id) {
   };
 
   try {
-      let response = await fetch(`/exercises/ex/${id}`, options);
+      let response = await fetch(`/exercises/${programId}/${id}`, options);
       if (response.ok) {
           let exercises = await response.json();
           setExercises(exercises);
@@ -114,6 +115,10 @@ async function deleteEx( id) {
       </div>
           <AddExerciseForm addExerciseCb={addExercise} />
           <ShareForm exercises={exercises}/>
+          {/* <Routes>
+          <Route path="/exercises/:programId" element={<UrlToShare exercises={exercises} />} />
+
+          </Routes> */}
       </div>
     );
 }

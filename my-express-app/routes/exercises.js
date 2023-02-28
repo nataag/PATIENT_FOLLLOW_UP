@@ -117,7 +117,7 @@ router.get("/ex/:id", async function(req, res, next) {
   
     try {
         await db(sql);
-        let result = await db('SELECT * FROM exercises');
+        let result = await db(`SELECT * FROM exercises WHERE programId = ${programId}`);
         let exercises = result.data;
         res.status(201).send(exercises);
     } catch (err) {
@@ -126,8 +126,9 @@ router.get("/ex/:id", async function(req, res, next) {
   });
   
   //delete an exercise
-  router.delete("/ex/:id", async (req, res, next) => {
+  router.delete("/:programId/:id", async (req, res, next) => {
     let index = req.params.id;
+    let programId = req.params.programId;
   
     try {
         let result = await db(`SELECT * FROM exercises WHERE id = ${index}`);
@@ -135,7 +136,7 @@ router.get("/ex/:id", async function(req, res, next) {
             res.status(404).send({ error: 'Exercise not found' });
         } else {
             await db(`DELETE FROM exercises WHERE id = ${index}`);
-            let result = await db('SELECT * FROM exercises');
+            let result = await db(`SELECT * FROM exercises WHERE programId = ${programId}`);
             let exercises = result.data;
             res.send(exercises);
         } 

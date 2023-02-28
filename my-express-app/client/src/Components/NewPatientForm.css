@@ -38,7 +38,7 @@ input, textarea {
 }
 button {
   color: white;
-  /* background-color: #000000; */
+  background-color: #000000;
   padding: 8px 0px;
   border-radius: 5px !important;
   margin: 15px 0px;
@@ -78,8 +78,4 @@ button:focus {
   -webkit-box-shadow: none !important;
   box-shadow: none !important;
   outline-width: 0
-}
-
-buttonForm {
-  background-color: black;
 }

@@ -53,8 +53,8 @@ return (
           </div>
 
         <div className="row justify-content-center text-center mb-4">
-            <div className="form-group " id="formbutton"> 
-            <button type="submit" className="btn-block btn-primary col-sm-6">ADD PROGRAM</button> 
+            <div> 
+            <button type="submit">ADD PROGRAM</button> 
             </div>
         </div>
     </form>

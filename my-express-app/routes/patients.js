@@ -66,7 +66,7 @@ router.get("/:id", async function(req, res, next) {
 //post a new patient
 router.post("/", async (req, res, next) => {
   let { firstName, lastName, birthDate, email } = req.body;
-
+  console.log(req.body);
   let sql = `
       INSERT INTO patients (firstName, lastName, birthDate, email)
       VALUES ('${firstName}', '${lastName}', '${birthDate}', '${email}')

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 // import { useParams } from "react-router-dom";
 import './NewPatientForm.css';
 import { link } from 'react-router-dom';
@@ -15,6 +15,13 @@ function NewPatientForm({patients, addPatient}) {
     const [formData, setFormData] = useState(EMPTY_FORM);
     const navigate = useNavigate();
 
+    function handleChange(event) {
+        let { name, value } = event.target;
+        setFormData(data => ({
+            ...data,
+            [name]: value
+        }));
+    }
 
     function handleSubmit(event) {
         event.preventDefault();
@@ -22,14 +29,7 @@ function NewPatientForm({patients, addPatient}) {
         console.log(formData);
         setFormData(EMPTY_FORM);
         navigate(`/patients/${patients[patients.length-1].id}`);
-    }
-
-    function handleChange(event) {
-        let { name, value } = event.target;
-        setFormData(data => ({
-            ...data,
-            [name]: value
-        }));
+        
     }
 
  
@@ -61,7 +61,7 @@ function NewPatientForm({patients, addPatient}) {
         <div class="row justify-content-between text-left">
             <div class="form-group col-12 flex-column d-flex">
                 <label className="form-control-label px-1"></label>
-                <input type="text" id="ans" name="birthDate" placeholder="Birth Date YYYY-MM-DD"
+                <input type="date" id="ans" name="birthDate" placeholder="Birth Date YYYY-MM-DD"
                 value={formData.birthDate}
                 onChange={handleChange}/>     
             </div>

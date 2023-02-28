@@ -44,7 +44,7 @@ function PatientData({patients}) {
            <h5 className="text-info">First Name: {patient?.firstName}</h5>
            <h5 className="text-info">Last Name: {patient?.lastName}</h5>
            <h5 className="text-info">Birth Date: {patient?.birthDate}</h5>
-           <h5 className="text-info mb-4">Email Address: {patient?.email}</h5>
+           <h5 className="text-info mb-5">Email Address: {patient?.email}</h5>
         </div>
     </div>
 

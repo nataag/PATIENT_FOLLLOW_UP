@@ -39,7 +39,7 @@ input, textarea {
 button {
   color: white;
   background-color: #633BBC;
-  padding: 8px 0px;
+  padding: 8px 8px;
   border-radius: 5px !important;
   margin: 15px 0px;
   box-sizing: border-box;
