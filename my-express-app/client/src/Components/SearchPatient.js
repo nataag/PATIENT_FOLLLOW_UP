@@ -35,6 +35,7 @@ function SearchPatient() {
                     value={search}
                     onChange={handleChange}
                 />
+                
                 <div className="dropDown text-decoration-none">{
                 patients.map(patient => 
                 <div>
@@ -44,6 +45,7 @@ function SearchPatient() {
                     
                 </div>)
                 }
+                
                 </div>    
                 </div>
             </div>

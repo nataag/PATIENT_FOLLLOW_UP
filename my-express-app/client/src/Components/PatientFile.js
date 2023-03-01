@@ -86,7 +86,6 @@ async function deleteProgram(id) {
         <ShowPrograms programs={programs} deleteProgramCb={deleteProgram}/>
         <AddProgramForm addProgramCb={addProgram} programs={programs}/>
     
-        {/* <h3>Programs: {program?.programTitle}</h3> */}
     </div>
     </div>
         </div>

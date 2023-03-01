@@ -7,19 +7,17 @@ import HomeView from "./Components/HomeView";
 import ExercisesView from "./Components/ExercisesView";
 import UrlToShare from "./Components/UrlToShare";
 import ExercisesList from "./Components/ExercisesList";
-// import Logo from "./LOGO.png";
+
 
 function App() {
   
   const [patients, setPatients] = useState([]);
   //when the page loads, fetch the data from the server
   useEffect(() => {
-    // fetch("/patients").then((response) => response.json())
-    // .then((data) => setPatients(data))
     getPatients();
   }, []);
 
-// Get All patients in a multi.. input
+// Get All patients
 async function getPatients() {
   try {
     let response = await fetch('/patients');

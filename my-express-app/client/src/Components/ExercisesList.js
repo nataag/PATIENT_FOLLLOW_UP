@@ -9,20 +9,22 @@ function ExercisesList(props) {
   // const { id } = useParams();
   // const program = programs.find((program) => +program.id === +id);
   
-  const [data, setData] = useState();
+
+  //This code is to display eitable input fields:
+  // const [data, setData] = useState();
   
-  function handleSubmit(event) {
-    event.preventDefault();
-    props.modifyEx(data);
-    setData('');
-  }
-  function handleChange(event) {
-    let { name, value } = event.target;
-        setData(data => ({
-            ...data, 
-            [name]: value
-        }));
-    }
+  // function handleSubmit(event) {
+  //   event.preventDefault();
+  //   props.modifyEx(data);
+  //   setData('');
+  // }
+  // function handleChange(event) {
+  //   let { name, value } = event.target;
+  //       setData(data => ({
+  //           ...data, 
+  //           [name]: value
+  //       }));
+  //   }
        
 
   return (

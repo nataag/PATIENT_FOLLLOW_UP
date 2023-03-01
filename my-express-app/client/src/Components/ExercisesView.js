@@ -55,27 +55,27 @@ function ExercisesView(props) {
   }
     
   // PUT: Modify exercise inputs
-  async function modifyEx(id) {
-    let exercise = exercises.find(e => e.id === id);
+//   async function modifyEx(id) {
+//     let exercise = exercises.find(e => e.id === id);
 
-    let options = {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(exercise)
-    };
+//     let options = {
+//         method: 'PUT',
+//         headers: { 'Content-Type': 'application/json' },
+//         body: JSON.stringify(exercise)
+//     };
 
-    try {
-        let response = await fetch(`/exercises/ex/${id}`, options);
-        if (response.ok) {
-            let exercises = await response.json();
-            setExercises(exercises);
-        } else {
-            console.log(`Server error: ${response.status} ${response.statusText}`);
-        }
-    } catch (err) {
-        console.log(`Server error: ${err.message}`);
-    }
-}
+//     try {
+//         let response = await fetch(`/exercises/ex/${id}`, options);
+//         if (response.ok) {
+//             let exercises = await response.json();
+//             setExercises(exercises);
+//         } else {
+//             console.log(`Server error: ${response.status} ${response.statusText}`);
+//         }
+//     } catch (err) {
+//         console.log(`Server error: ${err.message}`);
+//     }
+// }
 
 // DELETE an exercise
 async function deleteEx( id) {
@@ -102,23 +102,14 @@ async function deleteEx( id) {
       <div class="container-fluid mx-auto col-xl-9 col-lg-7 col-md-6 col-12">
       <div class="row d-flex justify-content-center">
 
-        <div className="bg-white">
-          {/* <h3>Programs: {key={programs.id} {programs.programTitle}}</h3> */}
-          {/* <Routes>
-          <Route path="/exercises/:programId" element={<ExercisesList exercises={exercises} deleteEx={deleteEx} modifyE x={modifyEx}/>}  />
-          
-          </Routes>  */}
-          
-          <ExercisesList exercises={exercises} deleteEx={deleteEx} modifyEx={modifyEx} />
+        <div className="bg-white">          
+          <ExercisesList exercises={exercises} deleteEx={deleteEx} />
         </div>
       </div>
       </div>
           <AddExerciseForm addExerciseCb={addExercise} />
           <ShareForm exercises={exercises}/>
-          {/* <Routes>
-          <Route path="/exercises/:programId" element={<UrlToShare exercises={exercises} />} />
-
-          </Routes> */}
+          
       </div>
     );
 }

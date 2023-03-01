@@ -4,28 +4,9 @@ import { Link, useParams } from 'react-router-dom';
 
 function ShareForm(props) {
     const [data, setData] = useState("");
-    // const [patients, setPatients] = useState([])
-
-
-    // function handleChange(event) {
-    //     setSearch(event.target.value)
-    // }
-
-    // async function searchPatient(e){
-
-    //     e.preventDefault()
-    //     const response = await fetch("/patients/search?search="+search)
-    //     const data = await response.json()
-    //     setPatients(data)
-
-    // }
-
-    // function handleSubmit(event) {
-    //     event.preventDefault();
-    //     props.addProgramCb(newProgram);
-    //     setNewProgram(EMPTY_PROGRAM);
-    //   }
     
+// handleSubmit to do (send email)
+
       function handleChange(event) {
         let { name, value } = event.target;
             setData(data => ({
@@ -33,18 +14,6 @@ function ShareForm(props) {
                 [name]: value
             }));
         }
-
-        // const templateParams = {
-        //     name: 'James',
-        //     notes: 'Check this out!'
-        //   };
-          
-        //   emailjs.send(default_service, template_t7j1tya, templateParams)
-        //     .then(function(response) {
-        //        console.log('SUCCESS!', response.status, response.text);
-        //     }, function(error) {
-        //        console.log('FAILED...', error);
-        //     });
 
 const {programId} = useParams();
     return (

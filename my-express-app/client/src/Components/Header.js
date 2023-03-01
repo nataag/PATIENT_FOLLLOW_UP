@@ -3,11 +3,7 @@ import './Header.css';
 
 function Header() {
   
-//   const { patientId } = useParams();
-//   const program = programs.map((program) => +program.patientId === +patientId);
 
-
- 
   return (
     
         <div>
