@@ -1,14 +1,14 @@
 # Patient_Follow_Up
 
-SETUP
+SETUP:
 
-Dependencies
+DEPENDENCIES
 Go to project directory (cd my-express-app). 
 Run npm install in project directory. This will install server-related dependencies such as express.
 
 cd client and run npm install. This will install client dependencies (React).
 
-Database Prep
+DATABADE PREP
 Access the MySQL interface in your terminal by running mysql -u root -p
 Create a new database called what you want (xxxxx): create database xxxxxx
 Add a .env file to the project folder of this repository containing the MySQL authentication information for MySQL user. 
@@ -23,6 +23,6 @@ Run npm run migrate in the project folder of this repository, in a new terminal 
 
 Make sure you understand how each table is constructed. In your MySQL console, you can run use xxxxxx; and then describe patients; or describe programs; or describe exercises; to see the structure of the students table.
 
-Development
+DEVELOPMENT
 Run npm start in project directory (my-express-app) to start the Express server on port 5000
 In another terminal, do cd client and run npm start to start the client in development mode with hot reloading in port 3000.
