@@ -1,6 +1,6 @@
 # Patient_Follow_Up
 
-SETUP
+SETUP:
 
 DEPENDENCIES
 Go to project directory (cd my-express-app). 
