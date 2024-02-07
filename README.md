@@ -1,5 +1,6 @@
 # Patient Follow Up
-![patient](https://github.com/nalmarazgutierrez/PATIENT-FOLLOW-UP/assets/113330261/dfcbf361-f113-469d-a4fc-2f8a0f9f25ca)
+![pfupgithub](https://github.com/nalmarazgutierrez/PATIENT-FOLLOW-UP/assets/113330261/0054d223-16cd-4526-92e0-c62cf735db1a)
+
 
 ## Description
 My full-stack application streamlines exercise sheet management for physiotherapists, providing a visual and autonomous experience for patients. It also offers a comprehensive database system for professionals to maintain detailed patient histories, enhancing the effectiveness of sessions and preventing future setbacks.
