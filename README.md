@@ -8,7 +8,7 @@ My full-stack application streamlines exercise sheet management for physiotherap
 ## Why?
 To address limitations in traditional exercise sheet management within physiotherapy practices, this application provides professionals with a quick, efficient, and visual solution for assigning and monitoring home exercises, thereby enhancing patient autonomy. Furthermore, the integration of a database facilitates the recording and analysis of each patient's history, enabling more personalized care, effective sessions, and the prevention of potential setbacks. Ultimately, the application aims to optimize the treatment process and improve outcomes for both patients and healthcare professionals.
 
-## Quick Start
+## 🚀 Quick Start
 #### DEPENDENCIES
 Go to project directory (cd my-express-app). 
 Run npm install in project directory. This will install server-related dependencies such as express.
