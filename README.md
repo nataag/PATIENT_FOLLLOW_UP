@@ -5,7 +5,7 @@
 A follow-up App for therapists, to send homework easily to their patients.
 
 ## Why?
-As a physiotherapist, I had to spend extra time creating customised exercise plans to make sure that my patients continued to make progress at home. I looked for poorly understandable illustrations from old books and other images from the internet. So, why not recording the patient performing the exercise during the session? According to good clinical practice, exercises that have not been practiced during the session should not be prescribed. This way, we can create a fully customised worksheet and send it immediately to our patient's email address.
+As a physiotherapist, I had to spend extra time creating customised exercise plans to make sure that my patients continued to make progress at home. I wasted my time looking for poorly understandable illustrations from old books and other images from the internet. So, why not recording our patient performing the exercise during the session? According to good clinical practice, exercises that have not been practiced during the session should not be prescribed. This way, we can create a fully customised worksheet and send it immediately to our patient's email address.
 
 This App provides professionals with a quick, efficient, and visual solution for assigning and monitoring home exercises, thereby enhancing patient autonomy. Furthermore, the integration of a database facilitates the recording and analysis of each patient's history, enabling more personalized care, effective sessions, and the prevention of potential relapses.
 
