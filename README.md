@@ -2,10 +2,12 @@
 ![pfupgithub](https://github.com/nalmarazgutierrez/PATIENT-FOLLOW-UP/assets/113330261/0054d223-16cd-4526-92e0-c62cf735db1a)
 
 ## Description:
-A follow-up App for therapists, to send homework easily to their patients
+A follow-up App for therapists, to send homework easily to their patients.
 
 ## Why?
-To address limitations in traditional exercise sheet management within physiotherapy practices, this application provides professionals with a quick, efficient, and visual solution for assigning and monitoring home exercises, thereby enhancing patient autonomy. Furthermore, the integration of a database facilitates the recording and analysis of each patient's history, enabling more personalized care, effective sessions, and the prevention of potential setbacks. Ultimately, the application aims to optimize the treatment process and improve outcomes for both patients and healthcare professionals.
+As a physiotherapist, I had to spend extra time creating customised exercise plans to make sure that my patients continued to make progress at home. I looked for poorly understandable illustrations from old books and other images from the internet. So, why not recording the patient performing the exercise during the session? According to good clinical practice, exercises that have not been practiced during the session should not be prescribed. This way, we can create a fully customised worksheet and send it immediately to our patient's email address.
+
+This App provides professionals with a quick, efficient, and visual solution for assigning and monitoring home exercises, thereby enhancing patient autonomy. Furthermore, the integration of a database facilitates the recording and analysis of each patient's history, enabling more personalized care, effective sessions, and the prevention of potential relapses.
 
 ## 🚀 Quick Start
 #### DEPENDENCIES
