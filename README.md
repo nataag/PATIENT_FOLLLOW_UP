@@ -39,4 +39,7 @@ In another terminal, do cd client and run npm start to start the client in devel
 
 ## Contributing
 
+
+future features
+
 ## SETUP
