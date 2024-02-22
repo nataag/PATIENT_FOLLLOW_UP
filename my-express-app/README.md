@@ -1,6 +1,6 @@
 ## Setup
 
-### Dependencies
+### Dependencies:::::
 
 - Go to project directory (cd my-express-app). Run `npm install` in project directory. This will install server-related dependencies such as `express`.
 - `cd client` and run `npm install`. This will install client dependencies (React).
