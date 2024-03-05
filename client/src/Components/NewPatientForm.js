@@ -1,7 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
-// import { useParams } from "react-router-dom";
+// import React, { useState, useEffect, useRef } from "react";
+// // import { useParams } from "react-router-dom";
+// import './NewPatientForm.css';
+// import { link } from 'react-router-dom';
+// import { useNavigate } from "react-router-dom";
+
+// const EMPTY_FORM = {
+//     firstName: '',
+//     lastName: '',
+//     birthDate: '',
+//     email: ''
+// };
+
+// function NewPatientForm({patients, addPatient}) {
+//     const [formData, setFormData] = useState(EMPTY_FORM);
+//     const navigate = useNavigate();
+
+//     function handleChange(event) {
+//         let { name, value } = event.target;
+//         setFormData(data => ({
+//             ...data,
+//             [name]: value
+//         }));
+//     }
+
+//     function handleSubmit(event) {
+//         event.preventDefault();
+//         addPatient(formData);
+//         console.log(formData);
+//         setFormData(EMPTY_FORM);
+//         navigate(`/patients/${patients[patients.length-1].id}`);
+        
+//     }
+
+import React, { useState } from "react";
 import './NewPatientForm.css';
-import { link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 
 const EMPTY_FORM = {
@@ -11,9 +43,28 @@ const EMPTY_FORM = {
     email: ''
 };
 
-function NewPatientForm({patients, addPatient}) {
+function NewPatientForm({ addPatient }) {
     const [formData, setFormData] = useState(EMPTY_FORM);
     const navigate = useNavigate();
+
+    async function handleSubmit(event) {
+        event.preventDefault();
+
+        try {
+            // Add the new patient and get the response
+            const newPatientResponse = await addPatient(formData);
+
+            // Ensure the response is valid and contains an 'id' property
+            if (newPatientResponse && newPatientResponse.id) {
+                // Navigate to the last patient created
+                navigate(`/patients/${newPatientResponse.id}`);
+            } else {
+                console.error("Invalid response from server:", newPatientResponse);
+            }
+        } catch (error) {
+            console.error("Error while adding a new patient:", error);
+        }
+    }
 
     function handleChange(event) {
         let { name, value } = event.target;
@@ -23,16 +74,9 @@ function NewPatientForm({patients, addPatient}) {
         }));
     }
 
-    function handleSubmit(event) {
-        event.preventDefault();
-        addPatient(formData);
-        console.log(formData);
-        setFormData(EMPTY_FORM);
-        navigate(`/patients/${patients[patients.length-1].id}`);
-        
-    }
 
- 
+
+    
     return (
 
   <div className="card">

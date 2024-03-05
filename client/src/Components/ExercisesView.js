@@ -53,7 +53,55 @@ function ExercisesView(props) {
       console.log(`Server error: ${err.message}`);
     }
   }
+
+  // DELETE an exercise
+async function deleteEx( id) {
+  let confirm = window.confirm("Are you sure you want to delete this exercise?")
     
+  if (confirm) {
+  // Define fetch() options
+  let options = {
+      method: 'DELETE'
+  };
+
+  try {
+      let response = await fetch(`/exercises/${programId}/${id}`, options);
+      if (response.ok) {
+          let exercises = await response.json();
+          setExercises(exercises);
+      } else {
+          console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+  } catch (err) {
+      console.log(`Server error: ${err.message}`);
+  }
+}
+}
+
+// PUT: Modify exercise inputs
+async function modifyEx(id, formData) {
+ 
+  let options = {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+  };
+console.log(formData);
+console.log(id);
+  try {
+      let response = await fetch(`/exercises/ex/${id}`, options);
+      if (response.ok) {
+          let exercises = await response.json();
+          setExercises(exercises);
+      } else {
+          console.log(`Server error: ${response.status} ${response.statusText}`);
+      }
+  } catch (err) {
+      console.log(`Server error: ${err.message}`);
+  }
+}
+    
+
   // PUT: Modify exercise inputs
 //   async function modifyEx(id) {
 //     let exercise = exercises.find(e => e.id === id);
@@ -103,11 +151,11 @@ async function deleteEx( id) {
       <div class="row d-flex justify-content-center">
 
         <div className="bg-white">          
-          <ExercisesList exercises={exercises} deleteEx={deleteEx} />
+          <ExercisesList exercises={exercises} deleteEx={deleteEx} modifyEx={modifyEx} />
         </div>
       </div>
       </div>
-          <AddExerciseForm addExerciseCb={addExercise} />
+          <AddExerciseForm addExercise={addExercise} />
           <ShareForm exercises={exercises}/>
           
       </div>

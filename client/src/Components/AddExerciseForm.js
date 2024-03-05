@@ -13,12 +13,13 @@ const EMPTY_EXERCISE = {
 
 function AddExerciseForm(props) {
 
-  const [newExercise, setNewExercise] = useState(EMPTY_EXERCISE);  
+  const [newExercise, setNewExercise] = useState(props.formData || EMPTY_EXERCISE);  
   
   function handleSubmit(event) {
     event.preventDefault();
-    props.addExerciseCb(newExercise);
+    props.addExercise(newExercise);
     setNewExercise(EMPTY_EXERCISE);
+    props.setEditingEx(null);
   }
 
   function handleChange(event) {
@@ -28,8 +29,6 @@ function AddExerciseForm(props) {
             [name]: value
         }));
     }
-  
-
   
 return (
     

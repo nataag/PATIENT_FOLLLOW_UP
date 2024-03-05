@@ -3,9 +3,15 @@ import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import './ExercisesList.css';
 import UrlToShare from "./UrlToShare";
+import AddExerciseForm from './AddExerciseForm';
 
 function ExercisesList(props) {
-  
+    const [editingEx, setEditingEx] = useState(null);
+
+    function handleClick(exId) {
+        setEditingEx(exId)
+    }
+
   // const { id } = useParams();
   // const program = programs.find((program) => +program.id === +id);
   
@@ -35,12 +41,18 @@ function ExercisesList(props) {
                 props.exercises.map(ex => (
                     <div className="row card bg-light" key={ex.id}>
                         
-                        <h5>{ex.exerciseName}</h5>
+                        {editingEx === ex.id ? ( 
+                            <AddExerciseForm addExercise={(formData) => props.modifyEx(ex.id, formData)} formData={ex} setEditingEx={setEditingEx} /> 
+                        ) : ( 
+                        <div> 
+                            <h5>{ex.exerciseName}</h5>
                        
-                        <h6>Video: <Link to={ex.video}>{ex.video}</Link></h6>
-                        <h6>Series: {ex.series}</h6>
-                        <h6>Repetitions: {ex.repetitions} </h6>
-                        <h6>Notes: {ex.notes} </h6>
+                            <h6>Video: <Link to={ex.video}>{ex.video}</Link></h6>
+                            <h6>Series: {ex.series}</h6>
+                            <h6>Repetitions: {ex.repetitions} </h6>
+                            <h6>Notes: {ex.notes} </h6>
+                        </div>
+                      )} 
                       
                             {/* <button onClick={(e) => props.modifyEx(ex.id)} title="modify" type="button">
                                 <input type="text">...</input>
@@ -48,6 +60,7 @@ function ExercisesList(props) {
                             </button> */}
 
                         <div id="divButton" className="col-6 content-right">
+                        <button id="modifyButtonEx" className="col-4" onClick={(e) => handleClick(ex.id)} title="modify" type="button">MODIFY</button>
                         <button className="col-6" onClick={(e) => props.deleteEx(ex.id)} title="delete" type="button">DELETE</button>
                         </div>
                     </div>
